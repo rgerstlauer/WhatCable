@@ -29,7 +29,7 @@ public class RecognitionScoreView extends View implements ResultsView {
   private final float textSizePx;
   private final Paint fgPaint;
   private final Paint bgPaint;
-  private List<Recognition> results;
+  private List<Recognition> results; //hier stehen die Ergebnisse drin
 
   public RecognitionScoreView(final Context context, final AttributeSet set) {
     super(context, set);

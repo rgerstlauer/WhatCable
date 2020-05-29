@@ -46,6 +46,8 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   /** Input image size of the model along y axis. */
   private int imageSizeY;
 
+
+
   @Override
   protected int getLayoutId() {
     return R.layout.tfe_ic_camera_connection_fragment;
@@ -91,6 +93,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
           public void run() {
             if (classifier != null) {
               final long startTime = SystemClock.uptimeMillis();
+              //hier werden Ergebnisse geholt
               final List<Classifier.Recognition> results =
                   classifier.recognizeImage(rgbFrameBitmap, sensorOrientation);
               lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;

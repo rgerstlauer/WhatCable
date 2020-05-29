@@ -19,7 +19,6 @@
         android:orientation="vertical"
         android:paddingTop="10dp"
         android:paddingBottom="10dp">
-
         <ImageView
             android:id="@+id/bottom_sheet_arrow"
             android:layout_width="wrap_content"
@@ -35,20 +34,30 @@
 
             <TextView
                 android:id="@+id/detected_item"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/detected_item_value"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Info" />
+
+
         </LinearLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,18 +67,24 @@
 
             <TextView
                 android:id="@+id/detected_item1"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/detected_item1_value"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp" />
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Info" />
 
         </LinearLayout>
 
@@ -81,18 +96,24 @@
 
             <TextView
                 android:id="@+id/detected_item2"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/detected_item2_value"
-                android:layout_width="match_parent"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="12sp" />
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Info" />
 
         </LinearLayout>
 
