@@ -15,4 +15,11 @@
         android:text="Hier werden Informationen angezeigt"
         />
 
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/InfoText"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

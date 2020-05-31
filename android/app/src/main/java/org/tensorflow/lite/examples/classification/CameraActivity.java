@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.classification;
 import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -43,6 +44,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -57,7 +59,7 @@ import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Recognition;
 
-public abstract class CameraActivity extends AppCompatActivity
+public abstract class CameraActivity<pubic> extends AppCompatActivity
     implements OnImageAvailableListener,
         Camera.PreviewCallback,
         View.OnClickListener,
@@ -65,6 +67,17 @@ public abstract class CameraActivity extends AppCompatActivity
   private static final Logger LOGGER = new Logger();
 
   private static final int PERMISSIONS_REQUEST = 1;
+
+  //Variables for buttons
+  private Button button1;
+  private Button button2;
+  private Button button3;
+
+  //Variables for results
+  private static String res1;
+  private static String res2;
+  private static String res3;
+  private static int resultNbr;
 
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   protected int previewWidth = 0;
@@ -101,6 +114,20 @@ public abstract class CameraActivity extends AppCompatActivity
   private Model model = Model.QUANTIZED_EFFICIENTNET;
   private Device device = Device.CPU;
   private int numThreads = -1;
+
+  //Getter methods for result titles
+  public static String getRes1(){
+    return res1;
+  }
+  public static String getRes2(){
+    return res2;
+  }
+  public static String getRes3(){
+    return res3;
+  }
+  public static int getResultNbr(){
+    return resultNbr;
+  }
 
   //In onCreate Methode wird ClickListener eingefügt
   @Override
@@ -196,6 +223,34 @@ public abstract class CameraActivity extends AppCompatActivity
     model = Model.valueOf(modelSpinner.getSelectedItem().toString().toUpperCase());
     device = Device.valueOf(deviceSpinner.getSelectedItem().toString());
     numThreads = Integer.parseInt(threadsTextView.getText().toString().trim());
+
+    //Click Listener for Info-Buttons
+    button1 = (Button)findViewById(R.id.btn1);
+    button1.setOnClickListener(new View.OnClickListener(){
+      @Override
+      public void onClick(View v){
+        resultNbr = 1;
+        startActivity(new Intent(CameraActivity.this, InformationActivity.class));
+      }
+    });
+
+    button2 = (Button)findViewById(R.id.btn2);
+    button2.setOnClickListener(new View.OnClickListener(){
+      @Override
+      public void onClick(View v){
+        resultNbr = 2;
+        startActivity(new Intent(CameraActivity.this, InformationActivity.class));
+      }
+    });
+
+    button3 = (Button)findViewById(R.id.btn3);
+    button3.setOnClickListener(new View.OnClickListener(){
+      @Override
+      public void onClick(View v){
+        resultNbr = 3;
+        startActivity(new Intent(CameraActivity.this, InformationActivity.class));
+      }
+    });
   }
 
   protected int[] getRgbBytes() {
@@ -526,7 +581,10 @@ public abstract class CameraActivity extends AppCompatActivity
     if (results != null && results.size() >= 3) {
       Recognition recognition = results.get(0);
       if (recognition != null) {
-        if (recognition.getTitle() != null) recognitionTextView.setText(recognition.getTitle());
+        if (recognition.getTitle() != null) {
+          recognitionTextView.setText(recognition.getTitle());
+          res1 = recognition.getTitle();
+        }
         if (recognition.getConfidence() != null)
           recognitionValueTextView.setText(
               String.format("%.2f", (100 * recognition.getConfidence())) + "%");
@@ -534,7 +592,10 @@ public abstract class CameraActivity extends AppCompatActivity
 
       Recognition recognition1 = results.get(1);
       if (recognition1 != null) {
-        if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle());
+        if (recognition1.getTitle() != null) {
+          recognition1TextView.setText(recognition1.getTitle());
+          res2 = recognition.getTitle();
+        }
         if (recognition1.getConfidence() != null)
           recognition1ValueTextView.setText(
               String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
@@ -542,7 +603,10 @@ public abstract class CameraActivity extends AppCompatActivity
 
       Recognition recognition2 = results.get(2);
       if (recognition2 != null) {
-        if (recognition2.getTitle() != null) recognition2TextView.setText(recognition2.getTitle());
+        if (recognition2.getTitle() != null) {
+          recognition2TextView.setText(recognition2.getTitle());
+          res3 = recognition.getTitle();
+        }
         if (recognition2.getConfidence() != null)
           recognition2ValueTextView.setText(
               String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
