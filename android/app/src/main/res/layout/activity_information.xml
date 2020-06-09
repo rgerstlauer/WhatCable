@@ -17,9 +17,16 @@
 
     <TextView
         android:id="@+id/textTitle"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/InfoText"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textTitle"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

@@ -594,7 +594,7 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       if (recognition1 != null) {
         if (recognition1.getTitle() != null) {
           recognition1TextView.setText(recognition1.getTitle());
-          res2 = recognition.getTitle();
+          res2 = recognition1.getTitle();
         }
         if (recognition1.getConfidence() != null)
           recognition1ValueTextView.setText(
@@ -605,7 +605,7 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       if (recognition2 != null) {
         if (recognition2.getTitle() != null) {
           recognition2TextView.setText(recognition2.getTitle());
-          res3 = recognition.getTitle();
+          res3 = recognition2.getTitle();
         }
         if (recognition2.getConfidence() != null)
           recognition2ValueTextView.setText(
