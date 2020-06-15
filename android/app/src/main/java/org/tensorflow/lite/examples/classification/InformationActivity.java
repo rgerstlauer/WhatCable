@@ -60,6 +60,7 @@ public class InformationActivity extends AppCompatActivity {
             this.setImage(res3);
         }
     }
+
     private void setTitle(String result){
         if(result.equals("usb_a")) titleItem.setText("USB Typ A Kabel");
         if(result.equals("klinkenkabel")) titleItem.setText("Klinkenkabel");

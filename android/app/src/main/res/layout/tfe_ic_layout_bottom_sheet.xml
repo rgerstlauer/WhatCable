@@ -26,6 +26,15 @@
             android:layout_gravity="center"
             android:src="@drawable/icn_chevron_up" />
 
+        <TextView
+            android:id="@+id/noCable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

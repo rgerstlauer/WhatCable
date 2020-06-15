@@ -78,6 +78,11 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
   private static String res2;
   private static String res3;
   private static int resultNbr;
+  private float conf1;
+  private float conf2;
+  private float conf3;
+
+  private TextView noCable;
 
   private static final String PERMISSION_CAMERA = Manifest.permission.CAMERA;
   protected int previewWidth = 0;
@@ -207,6 +212,7 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
     recognition1ValueTextView = findViewById(R.id.detected_item1_value);
     recognition2TextView = findViewById(R.id.detected_item2);
     recognition2ValueTextView = findViewById(R.id.detected_item2_value);
+    noCable = findViewById(R.id.noCable);
 
     frameValueTextView = findViewById(R.id.frame_info);
     cropValueTextView = findViewById(R.id.crop_info);
@@ -585,9 +591,11 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
           recognitionTextView.setText(recognition.getTitle());
           res1 = recognition.getTitle();
         }
-        if (recognition.getConfidence() != null)
+        if (recognition.getConfidence() != null) {
           recognitionValueTextView.setText(
               String.format("%.2f", (100 * recognition.getConfidence())) + "%");
+          conf1 = recognition.getConfidence();
+        }
       }
 
       Recognition recognition1 = results.get(1);
@@ -596,9 +604,11 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
           recognition1TextView.setText(recognition1.getTitle());
           res2 = recognition1.getTitle();
         }
-        if (recognition1.getConfidence() != null)
+        if (recognition1.getConfidence() != null) {
           recognition1ValueTextView.setText(
               String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
+          conf2 = recognition1.getConfidence();
+        }
       }
 
       Recognition recognition2 = results.get(2);
@@ -607,9 +617,17 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
           recognition2TextView.setText(recognition2.getTitle());
           res3 = recognition2.getTitle();
         }
-        if (recognition2.getConfidence() != null)
+        if (recognition2.getConfidence() != null){
           recognition2ValueTextView.setText(
               String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
+          conf3 = recognition2.getConfidence();
+        }
+      }
+      //If-else for "No Cable"
+      if(conf1 < 0.8 && conf2 < 0.8 && conf3 < 0.8){
+        noCable.setText("Kein Kabel!");
+      }else{
+        noCable.setText(" ");
       }
     }
   }
