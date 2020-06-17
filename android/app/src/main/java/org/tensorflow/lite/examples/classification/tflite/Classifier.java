@@ -30,7 +30,6 @@ import java.util.PriorityQueue;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
 import org.tensorflow.lite.examples.classification.env.Logger;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.gpu.GpuDelegate;
 import org.tensorflow.lite.nnapi.NnApiDelegate;
 import org.tensorflow.lite.support.common.FileUtil;
@@ -51,7 +50,7 @@ public abstract class Classifier {
 
   /** The model type used for classification. */
   public enum Model {
-    FLOAT_MOBILENET,
+    MODEL_V1,
     QUANTIZED_MOBILENET,
     FLOAT_EFFICIENTNET,
     QUANTIZED_EFFICIENTNET
@@ -113,7 +112,7 @@ public abstract class Classifier {
       throws IOException {
     if (model == Model.QUANTIZED_MOBILENET) {
       return new ClassifierQuantizedMobileNet(activity, device, numThreads);
-    } else if (model == Model.FLOAT_MOBILENET) {
+    } else if (model == Model.MODEL_V1) {
       return new ClassifierFloatMobileNet(activity, device, numThreads);
     } else if (model == Model.FLOAT_EFFICIENTNET) {
       return new ClassifierFloatEfficientNet(activity, device, numThreads);
