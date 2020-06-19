@@ -46,6 +46,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/whatcable_logo" /> //Logo geändert -RG
+
+            <ImageButton
+                android:id="@+id/questionmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:src="@android:drawable/ic_menu_search"/>
         </androidx.appcompat.widget.Toolbar>
 
     </RelativeLayout>

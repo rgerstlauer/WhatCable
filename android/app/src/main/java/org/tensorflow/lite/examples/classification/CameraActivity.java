@@ -45,6 +45,7 @@ import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -72,6 +73,8 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
   private Button button1;
   private Button button2;
   private Button button3;
+
+  private ImageButton btn_question;
 
   //Variables for results
   private static String res1;
@@ -255,6 +258,14 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       public void onClick(View v){
         resultNbr = 3;
         startActivity(new Intent(CameraActivity.this, InformationActivity.class));
+      }
+    });
+
+    btn_question = (ImageButton)findViewById(R.id.questionmark);
+    btn_question.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent (CameraActivity.this, TutorialActivity.class));
       }
     });
   }
