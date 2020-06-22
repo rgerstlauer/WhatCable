@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InformationActivity">
+    tools:context=".InformationActivity"
+    >
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -24,6 +26,43 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/whatcable_logo" /> //Logo geändert -RG
         </androidx.appcompat.widget.Toolbar>
+
+
+            <LinearLayout
+                android:id="@+id/firstEntry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Infos zur App Benutzung"
+                    android:textSize="30dp"
+                    android:layout_gravity="center" />
+
+                 <Button
+                     android:id="@+id/btnOpenOne"
+                     android:onClick="showInformationOne"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:text="VIEW"
+                     android:layout_gravity="center" />
+            </LinearLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoFirstEntry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hier wird ein Text angezeigt, der ausgeklappt wird, damit die Informationen einzeln angezeigt werden..... Ich hoffe es funktioniert irgendwann :)"/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
     </LinearLayout>
 
