@@ -3,24 +3,32 @@ package org.tensorflow.lite.examples.classification;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 
 public class TutorialActivity extends AppCompatActivity {
-    private Button btnOpenOne;
+    private ImageButton btnOpenOne;
+    private ImageButton btnOpenTwo;
     private ExpandableRelativeLayout infoFirstEntry;
+    private ExpandableRelativeLayout infoSecondEntry;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
-        btnOpenOne = (Button)findViewById(R.id.btnOpenOne);
+        btnOpenOne = (ImageButton)findViewById(R.id.btnOpenOne);
+        btnOpenTwo = (ImageButton)findViewById(R.id.btnOpenTwo);
     }
 
-    public void showInformationOne(View view){
+    public void showInformationOne(android.view.View View){
         infoFirstEntry = (ExpandableRelativeLayout)findViewById(R.id.infoFirstEntry);
         infoFirstEntry.toggle();
+    }
+
+    public void showInformationTwo(android.view.View View){
+        infoSecondEntry = (ExpandableRelativeLayout)findViewById(R.id.infoSecondEntry);
+        infoSecondEntry.toggle();
     }
 }
