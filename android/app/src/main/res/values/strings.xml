@@ -7,8 +7,8 @@
         <item>Model_V1</item>
         //Wenn Modelname geändert wird, muss in Classifier.java Zeile 53 angepasst (Refractor)
         werden
+        <item>Model_Float_EfficientNet_V1</item>
         <item>Quantized_EfficientNet</item>
-        <item>Float_EfficientNet</item>
         <item>Quantized_MobileNet</item>
 
     </string-array>

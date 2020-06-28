@@ -50,12 +50,12 @@ public class ClassifierFloatEfficientNet extends Classifier {
     // you can download this file from
     // see build.gradle for where to obtain this file. It should be auto
     // downloaded into assets.
-    return "efficientnet-lite0-fp32.tflite";
+    return "model_efficientnet_v1.tflite";
   }
 
   @Override
   protected String getLabelPath() {
-    return "labels_without_background.txt";
+    return "labels.txt";
   }
 
   @Override
