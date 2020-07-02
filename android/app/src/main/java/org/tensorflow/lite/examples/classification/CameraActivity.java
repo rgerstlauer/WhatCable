@@ -637,8 +637,12 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       //If-else for "No Cable"
       if(conf1 < 0.8 && conf2 < 0.8 && conf3 < 0.8){
         noCable.setText("Kein Kabel!");
+        noCable.setTextColor(getResources().getColor(R.color.wc_darkred));
       }else{
-        noCable.setText(" ");
+        if(res1.equals("usb_a")) noCable.setText("USB A Kabel wurde erkannt");
+        if(res1.equals("klinkenkabel")) noCable.setText("Klinkenkabel wurde erkannt");
+        if(res1.equals("hdmi")) noCable.setText("HDMI Kabel wurde erkannt");
+        noCable.setTextColor(getResources().getColor(R.color.wc_darkgreen));
       }
     }
   }
