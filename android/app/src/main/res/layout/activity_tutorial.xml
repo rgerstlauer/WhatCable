@@ -28,8 +28,16 @@
         </androidx.appcompat.widget.Toolbar>
 
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <RelativeLayout
-            android:id="@+id/firstEntry"
+            android:id="@+id/app"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -44,25 +52,25 @@
                 android:layout_centerVertical="true"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
-                android:text="Infos zur App Benutzung"/>
+                android:text="Wozu dienst die App?"/>
 
 
 
             <ImageButton
-                android:id="@+id/btnOpenOne"
+                android:id="@+id/btnApp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_weight="1"
                 android:src="@drawable/icn_chevron_down"
                 android:layout_alignParentRight="true"
-                android:onClick="showInformationOne"/>
+                android:onClick="showApp"/>
 
 
         </RelativeLayout>
 
         <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-            android:id="@+id/infoFirstEntry"
+            android:id="@+id/infoApp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -76,12 +84,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hier wird ein Text angezeigt, der ausgeklappt wird, damit die Informationen einzeln angezeigt werden..... Ich hoffe es funktioniert irgendwann :)"/>
+                android:text="Die App dient dazu, mit Hilfe von Bilderkennung verschiedene Kabel zu erkennen und die grobe Funktionalität zu erklären."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/secondEntry"
+            android:id="@+id/probability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -96,25 +104,25 @@
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:layout_centerVertical="true"
-                android:text="Infos zur Anzeige"/>
+                android:text="Wie kann ich eine hohe Wahrscheinlichkeit erzielen?"/>
 
 
 
             <ImageButton
-                android:id="@+id/btnOpenTwo"
+                android:id="@+id/btnProbability"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="1"
                 android:src="@drawable/icn_chevron_down"
-                android:onClick="showInformationTwo"/>
+                android:onClick="showProbability"/>
 
 
         </RelativeLayout>
 
         <com.github.aakira.expandablelayout.ExpandableRelativeLayout
-            android:id="@+id/infoSecondEntry"
+            android:id="@+id/infoProbability"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -128,9 +136,701 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hier wird ein Text angezeigt, der ausgeklappt wird, damit die Informationen einzeln angezeigt werden..... Ich hoffe es funktioniert irgendwann :)"/>
+                android:text="Man muss auf verschiedene Dinge achten, um auch wirklich eine hohe Wahrscheinlichkeit für das richtige Ergebnis zu erzielen. Diese werden in den nächsten Fragen erläutert."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Muss ich auf den Hintergrund achten?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnBackground"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showBackground"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Der Benutzer sollte das Kabel vor einem möglichst einfarbigen, flachen Hintergrund halten (z.B. Wand, Tisch, etc.). So funktioniert die App am besten und dadurch erzielt man auch ein gutes Ergebnis."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/perspective"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Muss ich auf die Perspektive achten?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnPerspective"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showPerspective"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoPerspective"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solange das Kabel gut zu erkennen ist und sich vom Hintergrund gut abhebt, sollte die Perspektive keine große Rolle spielen. Falls die Erkennung nicht gut genug ist, probier doch einfach einen anderen Winkel."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Spielen die Lichtverhälnisse eine Rolle?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnLight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showLight"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoLight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wenn es hell genug ist, sodass das Kabel auch gut genug erkannt wird, spielt der Rest keine große Rolle."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/cabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Für welche Kabel kann ich diese App anwenden?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnCabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showCabel"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoCabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aktuell für HDMI-Kabel, Klinkenkabel und USB Typ-A. In Zukunft folgen noch viele weitere."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+
+
+        <RelativeLayout
+            android:id="@+id/confidence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Wie zuverlässig ist die App?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnConfidence"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showConfidence"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoConfidence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Die App ist sehr zuverlässig, da unser Modell gut genug trainiert wurde und auch sehr gute Ergebnisse erzielt. Ab einer Wahrscheinlichkeit von ca. 85% ist das Resultat gut."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tutframe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Was bedeutet Frame?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnFrame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showFrame"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Der Frame ist das Pixelverhältnis, mit welchem deine Kamera aufnimmt. Dieser Wert kann von Gerät zu Gerät abweichen, ist für den Nutzer aber nicht änderbar."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tutcrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Was ist Crop?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showCrop"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoCrop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mit dem Crop wird das Pixelverhältnis angegeben, mit welchem das Modell letztendlich arbeitet. Das heißt, das eingelesene Bilder deiner Kamera wird auf diesen Wert konvertiert. Dieser Wert ist vom jeweiligen Modell vorgegeben und auch nicht änderbar."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tutview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Was ist die View?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showView"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bevor das eingelesene Kamerabild auf den festgelegten Crop konvertiert wird,
+muss zuerst daraus ein quadratisches Bild erzeugt, das die Modelle nur mit Quadraten arbeiten können. Hierzu wird die Breite des Displays genommen und ggf. etwas von der Länge des Bildes abgeschnitten. Dieser Wert wird auch von der App bestimmt und ist nicht für den Benutzer änderbar."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rotation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Was sagt die Rotation aus?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnRotation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showRotation"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoRotation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Die Rotation beschreibt lediglich den Winkel, mit der Die App auf deinem Smartphone oder Tablet dargestellt wird und ist auch nicht änderbar."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tutinference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text=" Was bedeutet Inference Time?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnInference"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showInference"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoInference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Die Inference Time ist die Zeit, die dein Smartphone oder Tablet benötigt, um einmal die Wahrscheinlichkeit zu berechnen. Je niedriger diese Zeit ist, desto schneller werden die Wahrscheinlichkeiten aktualisiert."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tutthread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text=" Was sind Threads?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnThreads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showThreads"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoThreads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Die Anzahl der Threads beschreibt, mit wie vielen Prozessen die Berechnung der Wahrscheinlichkeit ausgeführt werden soll. Wenn du die Anzahl erhöhst, kann sich die Inference Time verringern."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text="Mit welchen Modellen arbeitet die App?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnModel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showModel"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="In der aktuellen Version haben wir vier Modelle implementiert, jeweils zwei Versionen von Float Efficientnet und zwei Versionen von Mobillenet. Zwischen diesen kannst du auch jederzeit wechseln und schauen, welches am besten funktioniert. \n \nTrainingsdaten der einzelnen Modellen: \n \nMobilenet_V1: ca. 600 Bilder \nMobilenet_V2: ca. 14000 Bilder (mit Augmentation) \nFloat Efficientnet_V1: ca. 1200 Bilder \nFloat_Efficientnet_V2: ca 14000 Bilder (mit Augmentation)"/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:background="#ACACAF"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="30sp"
+                android:layout_centerVertical="true"
+                android:text=" Was ist mit Device gemeint?"/>
+
+
+
+            <ImageButton
+                android:id="@+id/btnDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_weight="1"
+                android:src="@drawable/icn_chevron_down"
+                android:onClick="showDevice"/>
+
+
+        </RelativeLayout>
+
+        <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+            android:id="@+id/infoDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            app:ael_expanded="false"
+            app:ael_duration="500"
+            app:ael_interpolator="bounce"
+            app:ael_orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hier kannst du auswählen, ob die Berechnung der Wahrscheinlichkeiten mit der CPU oder der GPU (also dem Grafikchip) deines Smartphones oder Tablets ausgeführt werden soll. Aufgrund der Eigenschaft, dass moderne Smartphones oder Tablets sehr leistungsstarke Grafikchips besitzen, kann es sein, dass sich die Inference Time um einiges verringert, wenn du als Device GPU auswählst. \n \nJedoch kann es auch sein, dass dann die Berechnungen zu schnell gehen. In diesem Fall wähle lieber CPU aus."/>
+
+        </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+        </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 
