@@ -7,6 +7,7 @@
         <item>Model_MobileNet_V1</item>
         //Wenn Modelname geändert wird, muss in Classifier.java Zeile 53 angepasst (Refractor)
         werden
+        <item>Model_MobileNet_V2</item>
         <item>Model_Float_EfficientNet_V1</item>
         <item>Model_Float_EfficientNet_V2</item>
       <!--  <item>Quantized_EfficientNet</item>
