@@ -8,6 +8,7 @@ import android.widget.ImageButton;
 import com.github.aakira.expandablelayout.ExpandableRelativeLayout;
 
 public class TutorialActivity extends AppCompatActivity {
+    //Variables for the buttons
     private ImageButton btnApp;
     private ImageButton btnProbability;
     private ImageButton btnBackground;
@@ -23,6 +24,8 @@ public class TutorialActivity extends AppCompatActivity {
     private ImageButton btnThread;
     private ImageButton btnModel;
     private ImageButton btnDevice;
+
+    //Variables for the Expandable Layout
     private ExpandableRelativeLayout infoApp;
     private ExpandableRelativeLayout infoProbability;
     private ExpandableRelativeLayout infoBackground;
@@ -44,6 +47,7 @@ public class TutorialActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
+        //initialize the Buttons
         btnApp = (ImageButton)findViewById(R.id.btnApp);
         btnProbability = (ImageButton)findViewById(R.id.btnProbability);
         btnBackground = (ImageButton)findViewById(R.id.btnBackground);
@@ -61,6 +65,7 @@ public class TutorialActivity extends AppCompatActivity {
         btnDevice = (ImageButton)findViewById(R.id.btnDevice);
     }
 
+    //Methods for expand the information
     public void showApp(android.view.View View){
         infoApp = (ExpandableRelativeLayout)findViewById(R.id.infoApp);
         infoApp.toggle();

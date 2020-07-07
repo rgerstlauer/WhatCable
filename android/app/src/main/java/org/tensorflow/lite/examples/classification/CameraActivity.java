@@ -123,7 +123,7 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
   private Device device = Device.CPU;
   private int numThreads = -1;
 
-  //Getter methods for result titles
+  //Getter methods for result titles and result number
   public static String getRes1(){
     return res1;
   }
@@ -137,7 +137,7 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
     return resultNbr;
   }
 
-  //In onCreate Methode wird ClickListener eingefügt
+
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
@@ -261,6 +261,7 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       }
     });
 
+    //Click-Listener for question mark
     btn_question = (ImageButton)findViewById(R.id.questionmark);
     btn_question.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -600,11 +601,13 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       if (recognition != null) {
         if (recognition.getTitle() != null) {
           recognitionTextView.setText(recognition.getTitle());
+          //get the result
           res1 = recognition.getTitle();
         }
         if (recognition.getConfidence() != null) {
           recognitionValueTextView.setText(
               String.format("%.2f", (100 * recognition.getConfidence())) + "%");
+          //get the confidence
           conf1 = recognition.getConfidence();
         }
       }
@@ -613,11 +616,13 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       if (recognition1 != null) {
         if (recognition1.getTitle() != null) {
           recognition1TextView.setText(recognition1.getTitle());
+          //get the result
           res2 = recognition1.getTitle();
         }
         if (recognition1.getConfidence() != null) {
           recognition1ValueTextView.setText(
               String.format("%.2f", (100 * recognition1.getConfidence())) + "%");
+          //get the confidence
           conf2 = recognition1.getConfidence();
         }
       }
@@ -626,11 +631,13 @@ public abstract class CameraActivity<pubic> extends AppCompatActivity
       if (recognition2 != null) {
         if (recognition2.getTitle() != null) {
           recognition2TextView.setText(recognition2.getTitle());
+          //get the result
           res3 = recognition2.getTitle();
         }
         if (recognition2.getConfidence() != null){
           recognition2ValueTextView.setText(
               String.format("%.2f", (100 * recognition2.getConfidence())) + "%");
+          //get the confidence
           conf3 = recognition2.getConfidence();
         }
       }

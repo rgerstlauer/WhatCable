@@ -30,7 +30,9 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,7 +54,7 @@
                 android:layout_centerVertical="true"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
-                android:text="Wozu dienst die App?"/>
+                android:text="Wozu dient die App?"/>
 
 
 
@@ -136,7 +138,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Man muss auf verschiedene Dinge achten, um auch wirklich eine hohe Wahrscheinlichkeit für das richtige Ergebnis zu erzielen. Diese werden in den nächsten Fragen erläutert."/>
+                android:text="Man muss auf verschiedene Dinge achten, um eine hohe Wahrscheinlichkeit für das richtige Ergebnis zu erzielen. Diese werden in den nächsten Fragen erläutert."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
@@ -266,7 +268,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:layout_centerVertical="true"
-                android:text="Spielen die Lichtverhälnisse eine Rolle?"/>
+                android:text="Spielen die Lichtverhältnisse eine Rolle?"/>
 
 
 
@@ -298,7 +300,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wenn es hell genug ist, sodass das Kabel auch gut genug erkannt wird, spielt der Rest keine große Rolle."/>
+                android:text="Es sollte hell genug sein, damit das Kabel gut erkannt werden kann."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
@@ -512,7 +514,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mit dem Crop wird das Pixelverhältnis angegeben, mit welchem das Modell letztendlich arbeitet. Das heißt, das eingelesene Bilder deiner Kamera wird auf diesen Wert konvertiert. Dieser Wert ist vom jeweiligen Modell vorgegeben und auch nicht änderbar."/>
+                android:text="Mit dem Crop wird das Pixelverhältnis angegeben, mit welchem das Modell letztendlich arbeitet. Das eingelesene Bild deiner Kamera wird auf diesen Wert konvertiert. Dieser Wert ist vom jeweiligen Modell vorgegeben und nicht änderbar."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
@@ -565,7 +567,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bevor das eingelesene Kamerabild auf den festgelegten Crop konvertiert wird,
-muss zuerst daraus ein quadratisches Bild erzeugt, das die Modelle nur mit Quadraten arbeiten können. Hierzu wird die Breite des Displays genommen und ggf. etwas von der Länge des Bildes abgeschnitten. Dieser Wert wird auch von der App bestimmt und ist nicht für den Benutzer änderbar."/>
+muss daraus zuerst ein quadratisches Bild erzeugt werden, da die Modelle nur mit Quadraten arbeiten können. Hierzu wird die Breite des Displays genommen und ggf. etwas von der Länge des Bildes abgeschnitten. Dieser Wert wird von der App bestimmt und ist nicht für den Benutzer änderbar."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
@@ -617,7 +619,7 @@ muss zuerst daraus ein quadratisches Bild erzeugt, das die Modelle nur mit Quadr
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Die Rotation beschreibt lediglich den Winkel, mit der Die App auf deinem Smartphone oder Tablet dargestellt wird und ist auch nicht änderbar."/>
+                android:text="Die Rotation beschreibt lediglich den Winkel, mit der die App auf deinem Smartphone oder Tablet dargestellt wird und ist auch nicht änderbar."/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
@@ -773,7 +775,7 @@ muss zuerst daraus ein quadratisches Bild erzeugt, das die Modelle nur mit Quadr
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="In der aktuellen Version haben wir vier Modelle implementiert, jeweils zwei Versionen von Float Efficientnet und zwei Versionen von Mobillenet. Zwischen diesen kannst du auch jederzeit wechseln und schauen, welches am besten funktioniert. \n \nTrainingsdaten der einzelnen Modellen: \n \nMobilenet_V1: ca. 600 Bilder \nMobilenet_V2: ca. 14000 Bilder (mit Augmentation) \nFloat Efficientnet_V1: ca. 1200 Bilder \nFloat_Efficientnet_V2: ca 14000 Bilder (mit Augmentation)"/>
+                android:text="In der aktuellen Version haben wir vier Modelle implementiert, jeweils zwei Versionen von Float Efficientnet und zwei Versionen von Mobillenet. Zwischen diesen kannst du jederzeit wechseln und sehen, welches am besten funktioniert. \n \nTrainingsdaten der einzelnen Modellen: \n \nMobilenet_V1: ca. 600 Bilder \nMobilenet_V2: ca. 14000 Bilder (mit Augmentation) \nFloat Efficientnet_V1: ca. 1200 Bilder \nFloat_Efficientnet_V2: ca 14000 Bilder (mit Augmentation)"/>
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 
