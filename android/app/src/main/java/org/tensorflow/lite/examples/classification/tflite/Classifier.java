@@ -51,6 +51,7 @@ public abstract class Classifier {
   /** The model type used for classification. */
   public enum Model {
     MODEL_MOBILENET_V1,
+    MODEL_MOBILENET_V2,
     QUANTIZED_MOBILENET,
     MODEL_FLOAT_EFFICIENTNET_V1,
     MODEL_FLOAT_EFFICIENTNET_V2,
@@ -115,6 +116,8 @@ public abstract class Classifier {
       return new ClassifierQuantizedMobileNet(activity, device, numThreads);
     } else if (model == Model.MODEL_MOBILENET_V1) {
       return new ClassifierFloatMobileNet(activity, device, numThreads);
+    } else if (model == Model.MODEL_MOBILENET_V2) {
+      return new ClassifierFloatMobileNetV2(activity, device, numThreads);
     } else if (model == Model.MODEL_FLOAT_EFFICIENTNET_V1) {
       return new ClassifierFloatEfficientNet(activity, device, numThreads);
     } else if (model == Model.MODEL_FLOAT_EFFICIENTNET_V2) {
